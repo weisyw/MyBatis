@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itww.mybatis.mapper.SelectMapper">
+    <!-- 使用select, update, delete, insert 标签写sql -->
+    <select id="getUserById" resultType="com.itww.mybatis.pojo.User">
+        select * from t_user where id = #{id}
+    </select>
+    <select id="getUserList" resultType="com.itww.mybatis.pojo.User">
+        select * from t_user
+    </select>
+    <select id="getCount" resultType="int">
+        select count(id) from t_user
+    </select>
+    <select id="getUserToMap" resultType="map">
+        select * from t_user where id = #{id}
+    </select>
+    <select id="getAllUserToMap" resultType="java.util.Map">
+        select * from t_user
+    </select>
+</mapper>

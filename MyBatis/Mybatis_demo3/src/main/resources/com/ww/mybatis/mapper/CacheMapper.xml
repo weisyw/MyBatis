@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ww.mybatis.mapper.CacheMapper">
+    <cache />
+
+    <insert id="insertEmp">
+        insert into t_emp values(null, #{empName}, #{age}, #{sex}, #{email}, null)
+    </insert>
+    <!-- 使用select, update, delete, insert 标签写sql -->
+    <select id="getEmpByEid" resultType="com.ww.mybatis.pojo.Emp">
+        select * from t_emp where eid = #{eid}
+    </select>
+</mapper>
